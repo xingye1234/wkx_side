@@ -10,16 +10,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
-    - name: Install and Build
-        run:| 
-          npm install
-          npm run build
-          
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@v4.5.0
-      with:
-        floder: build
-      # env:
-        # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        # BRANCH: react-pages
-        # BUILD_SCRIPT: npm install && npm run build
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: react-pages
+        FOLDER: build
+        BUILD_SCRIPT: npm install && npm run build
