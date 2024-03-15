@@ -36,22 +36,22 @@ jobs:
 #       with:
 #         folder: build # The folder the action should deploy.
 
-build-and-deploy:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Install and Build # 下载依赖 打包项目
-      run: |
-        npm install
-        npm run build
+      - name: Install and Build # 下载依赖 打包项目
+        run: |
+          npm install
+          npm run build
 
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        folder: dist
-        branch: master
+      - name: Build and Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: master
 # 将静态内容部署到 GitHub Pages 的简易工作流程
 # name: Deploy static content to Pages
 
