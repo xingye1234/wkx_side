@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://xingye1234.github.io/github-action-demo",
+  "homepage": ".",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
